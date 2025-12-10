@@ -600,7 +600,7 @@ This project was developed as part of academic research at Memorial University o
 - **Daniel Manasseh** (Backend Lead)
 - **Hussein El Samad**
 
-**Supervisor:** [Professor Name]  
+**Supervisor:** Reza Shahidi  
 **Institution:** Memorial University of Newfoundland  
 **Course:** Software Engineering Capstone (Fall 2023)
 
@@ -610,7 +610,7 @@ This project was developed as part of academic research at Memorial University o
 
 **Daniel Manasseh Ofei Kwafo**  
 Email: danielmanasseh100@gmail.com  
-LinkedIn: [Your LinkedIn URL]  
+LinkedIn: www.linkedin.com/in/dmok0797  
 Location: St. John's, NL, Canada
 
 ---
