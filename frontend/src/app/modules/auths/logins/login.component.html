@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Login</h2>
+    <form (ngSubmit)="submitForm()" #registerForm="ngForm">
+        <input type="email" #email name="email" class="form-input email" placeholder="Email" required
+            [(ngModel)]="model.email">
+        <input type="password" #passwrod name="passwrod" class="form-input passwrod" placeholder="Password" required
+            [(ngModel)]="model.password">
+        <button mat-raised-button type="submit" color="primary" class="form-button"
+            [ngClass]="{disabled:!checkIfValid()}"
+            [disabled]="!registerForm.valid || status == 'processing'">
+            {{ status == 'processing' ? 'Signing In....': 'Login' }}
+        </button>
+    </form>
+    <div class="info">
+        <div class="info-item error" *ngIf="status == 'error'">
+            Could not verify the credentials. Please try again.
+        </div>
+    </div>
+    <div class="register-link">
+        <span>Not registered?</span>
+        <a [routerLink]="'/auths/registration'">&nbsp; &nbsp; Register here</a>
+    </div>
+</div>

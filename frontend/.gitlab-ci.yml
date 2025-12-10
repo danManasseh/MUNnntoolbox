@@ -1,0 +1,54 @@
+variables:
+  CI_PROJ_DIR: frontend
+  CI_ROOT_DIR: $CI_PROJECT_PATH/frontend
+  DOCKER_IMAGE_NAME: "mun-nn-toolbox/frontend"
+
+frontend-build:
+  stage: build
+  image: node:16.14.2
+  script:
+    - echo "Running Build"
+    - cd $CI_PROJ_DIR
+    - npm install
+    - npm run nn-build:prod
+  rules:
+    - changes:
+        - $CI_PROJ_DIR/**/*
+
+frontend-unit-test:
+  stage: test
+  image: trion/ng-cli-karma
+  script:
+    - echo "Running Test"
+    - cd $CI_PROJ_DIR
+    - npm install
+    - npm run nn-test:prod
+  needs:
+    - frontend-build
+  rules:
+    - changes:
+        - $CI_PROJ_DIR/**/*
+
+docker-build:
+  image: docker:cli
+  stage: docker-build
+  services:
+    - docker:dind
+  needs:
+    - frontend-unit-test
+  script:
+    - echo "Running docker build and push it to the registry"
+    - cd $CI_PROJ_DIR
+    - docker build -t $DOCKER_IMAGE_NAME .
+
+deploy-on-k8s:
+  stage: deploy
+  script:
+    - echo "Deploy the docker image on k8s"
+    - cd $CI_PROJ_DIR
+    - kubectl delete -f deployment.manifest.yml --ignore-not-found=true
+    - kubectl apply -f deployment.manifest.yml
+  needs:
+    - docker-build
+  only:
+    - main

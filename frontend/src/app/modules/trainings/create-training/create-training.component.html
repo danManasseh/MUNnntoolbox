@@ -1,0 +1,84 @@
+<div class="form-container">
+  <button mat-icon-button class="close-button" (click)="closeForm()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <h2 class="custom-dialog-title">Create New Training</h2>
+  <form (ngSubmit)="submitForm()" [formGroup]="trainingForm">
+    <div class="form-group">
+      <mat-form-field>
+        <label for="name">Name:</label>
+        <input matInput type="text" id="name" name="name" class="form-control" formControlName="name" required>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field>
+        <label for="nn_architecture_id">Architecture:</label>
+        <mat-select id="nn_architecture_id" name="nn_architecture_id" class="form-control" formControlName="nn_architecture_id" required>
+          <mat-option *ngFor="let option of architectures" [value]="option.id">{{ option.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field>
+        <label for="dataset_id">Dataset Name:</label>
+        <mat-select id="dataset_id" name="dataset_id" class="form-control" formControlName="dataset_id" required (selectionChange)="setColumns(trainingForm.get('dataset_id')?.value)">
+          <mat-option *ngFor="let option of datasets" [value]="option.id">{{ option.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field>
+        <label for="input">Inputs:</label>
+        <mat-select multiple id="input" name="input" class="form-control" formControlName="input" required 
+        (selectionChange)="updateInputOutputOptions($event, 'output')">
+          <mat-option *ngFor="let option of inputs" [value]="option">{{ option}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field>
+        <label for="output">Outputs:</label>
+        <mat-select multiple id="output" name="output" class="form-control" formControlName="output" required 
+        (selectionChange)="updateInputOutputOptions($event, 'input')">
+          <mat-option *ngFor="let option of outputs" [value]="option">{{ option}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field>
+        <label for="trainPercent">Train Percent:</label>
+        <div class="percentage-input-container">
+          <input matInput type="number" id="train_percent" name="train_percent" class="form-control" formControlName="train_percent"
+            min="0" max="100" required>
+          <span class="percentage-symbol"></span>
+        </div>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field>
+        <label for="validation_percent">Validation Percent:</label>
+        <div class="percentage-input-container">
+          <input matInput type="number" id="validation_percent" name="validation_percent" class="form-control" formControlName="validation_percent"
+            min="0" max="100" required>
+          <span class="percentage-symbol"></span>
+        </div>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field>
+        <label for="test_percent">Test Percent:</label>
+        <div class="percentage-input-container">
+        <input matInput type="number" id="test_percent" name="test_percent" formControlName="test_percent"
+          min="0" max="100" required>
+        <span class="percentage-symbol"></span>
+      </div>
+      </mat-form-field>
+    </div>
+    <div *ngIf="trainingForm.hasError('totalPercentageExceeds100')">
+      <mat-error>Total percentage exceeds 100%.</mat-error>
+    </div>
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

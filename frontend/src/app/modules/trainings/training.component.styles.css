@@ -1,0 +1,15 @@
+.container {
+  position: relative;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  margin-top: 60px;
+}

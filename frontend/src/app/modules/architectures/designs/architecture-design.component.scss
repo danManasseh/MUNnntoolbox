@@ -1,0 +1,153 @@
+.container {
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        height: 50px;
+    }
+
+    .design-board-wrapper {
+        flex-grow: 1;
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+
+        .design-header {
+            border: 1px solid #f0f0f0;
+            padding: 10px 10px;
+            display: flex;
+            margin-top: 10px;
+            height: 75px;
+
+            .right {
+                min-width: 150px;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .left {
+                flex-grow: 1;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                mat-form-field {
+                    display: block;
+                    margin: 0 10px;
+
+                    &.optimizer {
+                        width: 150px;
+                    }
+
+                    &.metrics {
+                        width: 150px;
+                    }
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0px 20px;
+
+                    li {
+                        display: flex;
+
+                        .action-color {
+                            width: 10px;
+                            height: 10px;
+                            display: block;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .design-board-main {
+            flex-grow: 1;
+            width: 100%;
+            min-height: 450px;
+            height: 450px;
+            background-color: #f2f2f2;
+            padding: 15px 15px;
+            overflow: auto;
+            display: flex;
+            align-items:  center;
+            // justify-content:  center;
+            // align-items: safe center;
+            // justify-content: safe center;
+            position: relative;
+            box-sizing: border-box;
+
+            &::before,
+            &::after {
+                content: '';
+                flex: 1;
+            }
+
+            .layer-wrapper {
+                margin: auto;
+                position: relative;
+                height: auto;
+                padding: 0px 20px;
+
+                .layer {
+                    padding: 5px 5px;
+                    margin-top: 5px;
+
+                    .neuron-wrapper {
+                        .neuron {
+                            margin: 15px auto;
+                            height: 35px;
+                            width: 35px;
+                            border-radius: 100%;
+                            background-color: rgba(0, 0, 0, 0.7);
+                            position: relative;
+
+                            span {
+                                position: absolute;
+                                background: red;
+                                color: white;
+                                padding: 0px;
+                                top: -10px;
+                                border-radius: 100%;
+                                right: -25px;
+                                justify-content: center;
+                                align-items: center;
+                                display: flex;
+                                padding: 1px 1px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                .layer-action-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 12px;
+
+                    button {
+                        margin: 2px 0px;
+                        position: relative;
+                    }
+
+                    .act_func {
+                        width: 120px;
+                    }
+                }
+            }
+        }
+    }
+}

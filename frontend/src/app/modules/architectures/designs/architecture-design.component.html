@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="header">
+        <h1 class="title">Design Architecture</h1>
+        <button class="save-button" [ngClass]="{'disabled': !checkIfValid()}" mat-raised-button color="" title="Click to save architecture" [disabled]="!checkIfValid()" (click)="onSave()">
+            Save Architecture
+        </button>
+    </div>
+    <div class="design-board-wrapper">
+        <div class="design-header">
+            <div class="left">
+                <mat-form-field class="name model-setting-form">
+                    <mat-label>Name</mat-label>
+                    <input matInput id="name" type="text" [(ngModel)]="archModel.name" required="true">
+                </mat-form-field>
+                <mat-form-field class="optimizer model-setting-form">
+                    <mat-label>Optimizers</mat-label>
+                    <mat-select [(ngModel)]="archModel.optimizer" id="Optimizer" name="optimizer">
+                        <mat-option *ngFor="let item of optimizerTypes" [value]="item">
+                            {{ item }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="loss model-setting-form">
+                    <mat-label>Loss</mat-label>
+                    <mat-select [(ngModel)]="archModel.loss" name="loss"  id="loss">
+                        <mat-option *ngFor="let item of lossTypes" [value]="item">
+                            {{ item }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="field metrics model-setting-form">
+                    <mat-label>Metrics</mat-label>
+                    <mat-select [(ngModel)]="archModel.metrics" name="metrics"  id="metrics">
+                        <mat-option *ngFor="let item of metricTypes" [value]="item">
+                            {{ item }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="right">
+                <button mat-raised-button (click)="archModel.addLayer(addLayerCallbackFunc)"
+                    title="Click to add layer to the architecture" class="add-layer" color="primary">
+                    Add Layer
+                </button>
+            </div>
+        </div>
+        <div class="design-board-main board-card design-body mat-elevation-z2" id="design-board-main"
+            (scroll)="onBoardScroll()">
+            <ng-container *ngFor="let layer of archModel.layers">
+                <div class="layer-wrapper">
+                    <div class="layer-action-wrapper">
+                        <span>
+                            <button mat-flat-button color="primary" class="add-neuron" (click)="layer.addNeuron(addNeuronCallbackFunc)"
+                                title="Click to add neuron to the layer">Add Neuron</button>
+                        </span>
+                        <span>
+                            <button mat-flat-button color="warn" class="remove-layer"
+                                (click)="archModel.removeLayer(layer.id, removeLayerCallbackFunc)"
+                                title="Click to remove neuron from the layer">Remove Layer</button>
+                        </span>
+                        <mat-form-field class="field act_func">
+                            <mat-label>Activation Functions</mat-label>
+                            <mat-select [(ngModel)]="layer.activationFunction" class="activationFunction" name="food">
+                                <mat-option *ngFor="let actFunc of activationFunctions" [value]="actFunc">
+                                    {{ actFunc }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <mat-card class="layer" [id]="layer.id">
+                        <div class="neuron-wrapper">
+                            <ng-container *ngFor="let neuron of layer.neurons">
+                                <div [id]="neuron.id" class="neuron">
+                                    <span title="Click to remove neuron from the layer" class="remove-neuron"
+                                        (click)="layer.removeNeuron(neuron.id, removeNeuronCallbackFunc)">
+                                        <mat-icon>remove</mat-icon>
+                                    </span>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </mat-card>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

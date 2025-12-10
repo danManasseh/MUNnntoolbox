@@ -1,0 +1,13 @@
+Dummy Products
+<br />
+<br />
+<br />
+<br />
+
+<p *ngIf="showLoader">Loading..............</p>
+
+<div *ngIf="!showLoader">
+    {{ dummyProduct.title }} - {{ dummyProduct.price }}
+    <br />
+    {{ dummyProduct.description }}
+</div>

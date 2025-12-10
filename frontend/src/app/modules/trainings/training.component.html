@@ -1,0 +1,44 @@
+<div class="container">
+    <button mat-raised-button color="primary" (click)="openFormDialog()" style="float: right;">Create New Training</button>
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Add columns for other properties here -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let training">{{ training.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="nn_architecture_id">
+        <th mat-header-cell *matHeaderCellDef>Architecture</th>
+        <td mat-cell *matCellDef="let training">{{ getArchitectureName(training.nn_architecture_id) }}</td>
+      </ng-container>
+      <ng-container matColumnDef="dataset_id">
+        <th mat-header-cell *matHeaderCellDef>Dataset Name</th>
+        <td mat-cell *matCellDef="let training">{{ getDatasetName(training.dataset_id) }}</td>
+      </ng-container>
+      <ng-container matColumnDef="train_percent">
+        <th mat-header-cell *matHeaderCellDef>Train Percent</th>
+        <td mat-cell *matCellDef="let training">{{ training.train_percent | percent}}</td>
+      </ng-container>
+      <ng-container matColumnDef="validation_percent">
+        <th mat-header-cell *matHeaderCellDef>Validation Percent</th>
+        <td mat-cell *matCellDef="let training">{{ training.validation_percent | percent}}</td>
+      </ng-container>
+      <ng-container matColumnDef="test_percent">
+        <th mat-header-cell *matHeaderCellDef>Test Percent</th>
+        <td mat-cell *matCellDef="let training">{{ training.test_percent | percent}}</td>
+      </ng-container>
+      <ng-container matColumnDef="created_at">
+        <th mat-header-cell *matHeaderCellDef>Created At</th>
+        <td mat-cell *matCellDef="let training">{{ training.created_at | date:'short' }}</td>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let training" [style.color]="getStatusColor(training.status)">
+          {{ training.status }}
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>

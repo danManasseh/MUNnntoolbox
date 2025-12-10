@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mun-nn-toolbox-frontend-deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: mun-nn-toolbox-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mun-nn-toolbox-frontend
+    spec:
+      containers:
+        - image: mun-nn-toolbox/frontend
+          name: mun-nn-toolbox-frontend
+          imagePullPolicy: Never
+          resources: {}
+          ports:
+            - containerPort: 3080
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mun-nn-toolbox-frontend-service
+spec:
+  ports:
+    - port: 3080
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: mun-nn-toolbox-frontend
+  type: NodePort

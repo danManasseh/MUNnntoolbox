@@ -1,0 +1,28 @@
+backend-unit-test:
+  stage: test
+  image: python:3.11.5
+  script:
+    - cd backend
+    - pip install -r requirements.txt
+    - python -m unittest discover -s endpoints/nn_generation/tests
+  only:
+    - main
+
+
+endpoints-unit-test:
+  stage: test
+  image: python:3.11.5
+  script:
+    - cd backend/endpoints
+    - pip install -r requirements.txt
+    - python -m pytest tests
+  only:
+    - main
+
+local-deployment:
+  stage: deploy
+  script:
+    - echo "Deploying backend to local Kubernetes cluster"
+    - kubectl apply -f app-deployment.yaml
+  only:
+    - main

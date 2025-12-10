@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="header">
+        <h1 class="title">
+            <!-- Architectures -->
+        </h1>
+        <a routerLink="/architecture/design" style="float: right;">
+            <button mat-raised-button color="primary" title="Click to add architecture" class="add-button">
+                Create New Architecture
+            </button>
+        </a>
+    </div>
+    <div class="table-container mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="">
+            <!-- Add columns for other properties here -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let item">{{ item.name }}</td>
+            </ng-container>
+            <ng-container matColumnDef="optimizer">
+                <th mat-header-cell *matHeaderCellDef>Optimizer</th>
+                <td mat-cell *matCellDef="let item">{{ item.configuration.optimizer }}</td>
+            </ng-container>
+            <ng-container matColumnDef="loss">
+                <th mat-header-cell *matHeaderCellDef>Loss</th>
+                <td mat-cell *matCellDef="let item">{{ item.configuration.loss }}</td>
+            </ng-container>
+            <ng-container matColumnDef="metrics">
+                <th mat-header-cell *matHeaderCellDef>Metrics</th>
+                <td mat-cell *matCellDef="let item">{{ item.configuration.metrics }}</td>
+            </ng-container>
+            <ng-container matColumnDef="layers">
+                <th mat-header-cell *matHeaderCellDef>Layers</th>
+                <td mat-cell *matCellDef="let item">
+                    <ul>
+                        <li class="arch-conf-item" *ngFor="let layer of item.configuration.layers">
+                            {{ layer.activation }} &nbsp; * &nbsp; {{ layer.units }} units
+                        </li>
+                    </ul>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="created_at">
+                <th mat-header-cell *matHeaderCellDef>Created At</th>
+                <td mat-cell *matCellDef="let item">{{ item.created_at | date:'short' }}</td>
+            </ng-container>
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let item">
+                    <a [routerLink]="['/architecture/design']" [queryParams]="{architecture_id: item.id}"
+                        mat-flat-button color="primary" title="Click to edit the architecture">
+                        <mat-icon>edit</mat-icon> Edit
+                    </a>
+                    <!-- <button *ngIf="!isSampleData" (click)="edit(item.id)" mat-flat-button color="primary"
+                        title="Click to edit the architecture">
+                        <mat-icon>edit</mat-icon> Edit
+                    </button> -->
+                    <button mat-flat-button color="warn" class="" style="margin-left: 5px;"
+                        (click)="deleteDesign(item.id)">
+                        <mat-icon>delete</mat-icon> Delete
+                    </button>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Registration</h2>
+    <form (ngSubmit)="submitForm()" #registerForm="ngForm">
+        <input type="text" #name name="name" class="form-input name" placeholder="Name" required
+            [(ngModel)]="model.name">
+        <input type="email" #email name="email" class="form-input email" placeholder="Email" required
+            [(ngModel)]="model.email">
+        <input type="password" #passwrod name="passwrod" class="form-input passwrod" placeholder="Password" required
+            [(ngModel)]="model.password">
+        <button mat-raised-button type="submit" color="primary" class="form-button"
+            [ngClass]="{disabled: !checkIfValid()}" [disabled]="!registerForm.valid || status == 'processing'">
+            {{ status == 'processing' ? 'Processing Registration ....': 'Register' }}
+        </button>
+    </form>
+    <div class="info">
+        <div class="info-item success" *ngIf="status == 'success'">
+            Successfully registered! You can now login.
+        </div>
+        <div class="info-item error" *ngIf="status == 'error'">
+            Something went wrong. Please try again later.
+        </div>
+    </div>
+    <div class="register-link">
+        <span>Already registered?</span>
+        <a [routerLink]="'/auths/login'">&nbsp; &nbsp; Login</a>
+    </div>
+</div>

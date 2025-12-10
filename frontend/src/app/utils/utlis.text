@@ -1,0 +1,2 @@
+- This directory contains utilities like pipes, helpers, constants, and enums.
+- Make different folder for each type: pipes, helpers, constants, and enums.

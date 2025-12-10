@@ -1,0 +1,1263 @@
+{
+	"info": {
+		"_postman_id": "99d32d59-eefa-4e39-8075-6e618728743e",
+		"name": "Capstone Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1203492"
+	},
+	"item": [
+		{
+			"name": "Sample",
+			"item": [
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Dummy blog post!\",\r\n  \"description\": \"Lorem ipsum dolor sit amet, consectetur adipisicing elit.\",\r\n  \"created\": \"2022-10-10 12:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/sample/post",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"sample",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/sample/post",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"sample",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"5d8eed18-2acf-43fa-8287-75dce101bcaf\",\r\n  \"title\": \"how to correctly lorem ipsum (Updated1)\",\r\n  \"description\": \"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem perferendis pariatur nobis culpa voluptatem nam sunt sit repudiandae!\",\r\n  \"created\": \"2022-11-10 12:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/sample/post",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"sample",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"8de63e13-84a4-48f2-afaa-dc66df4b4191\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/sample/post",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"sample",
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@mun.ca\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test1\",\r\n    \"email\": \"test1@mun.ca\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ0MTg3ODB9.ii8MirBQeHZE5Snmq-0enrMXYE2DWy8U_RRcWtoZ_0Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/user/list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Datasets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/dataset/list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"dataset",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All NN Models",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/model/list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"model",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All NN Predictions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/prediction/list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"prediction",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All NN Predictions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/prediction/list",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"prediction",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.0 Python/3.11.5"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 06:41:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1800"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"created_at\": \"2023-12-06 05:36:09\",\n        \"dataset_id\": 1,\n        \"id\": 1,\n        \"name\": \"prediction1\",\n        \"nn_model_id\": 3,\n        \"status\": \"Failed\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"created_at\": \"2023-12-06 05:40:15\",\n        \"dataset_id\": 1,\n        \"id\": 2,\n        \"name\": \"prediction2\",\n        \"nn_model_id\": 3,\n        \"status\": \"Failed\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"created_at\": \"2023-12-06 05:41:49\",\n        \"dataset_id\": 1,\n        \"id\": 3,\n        \"name\": \"prediction2\",\n        \"nn_model_id\": 3,\n        \"status\": \"Failed\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"created_at\": \"2023-12-06 05:50:13\",\n        \"dataset_id\": 1,\n        \"id\": 4,\n        \"name\": \"prediction3\",\n        \"nn_model_id\": 3,\n        \"status\": \"Failed\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"created_at\": \"2023-12-06 05:51:57\",\n        \"dataset_id\": 1,\n        \"id\": 5,\n        \"name\": \"prediction3\",\n        \"nn_model_id\": 3,\n        \"status\": \"Failed\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"created_at\": \"2023-12-06 06:22:04\",\n        \"dataset_id\": 1,\n        \"id\": 6,\n        \"name\": \"prediction3\",\n        \"nn_model_id\": 4,\n        \"status\": \"Failed\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"created_at\": \"2023-12-06 06:29:52\",\n        \"dataset_id\": 1,\n        \"id\": 7,\n        \"name\": \"prediction3\",\n        \"nn_model_id\": 4,\n        \"status\": \"Failed\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"created_at\": \"2023-12-06 06:30:26\",\n        \"dataset_id\": 1,\n        \"id\": 8,\n        \"name\": \"prediction3\",\n        \"nn_model_id\": 5,\n        \"status\": \"Failed\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"created_at\": \"2023-12-06 06:32:31\",\n        \"dataset_id\": 3,\n        \"id\": 9,\n        \"name\": \"prediction3\",\n        \"nn_model_id\": 5,\n        \"status\": \"Failed\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"created_at\": \"2023-12-06 06:36:13\",\n        \"dataset_id\": 3,\n        \"id\": 10,\n        \"name\": \"prediction3\",\n        \"nn_model_id\": 5,\n        \"status\": \"Failed\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"created_at\": \"2023-12-06 06:38:07\",\n        \"dataset_id\": 3,\n        \"id\": 11,\n        \"name\": \"prediction3\",\n        \"nn_model_id\": 5,\n        \"status\": \"Completed\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get NN Model",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/model/status?nn_model_id=3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"model",
+								"status"
+							],
+							"query": [
+								{
+									"key": "nn_model_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get NN Prediction",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/prediction/status?nn_prediction_id=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"prediction",
+								"status"
+							],
+							"query": [
+								{
+									"key": "nn_prediction_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get NN Prediction",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/prediction/status?nn_prediction_id=11",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"prediction",
+										"status"
+									],
+									"query": [
+										{
+											"key": "nn_prediction_id",
+											"value": "11"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.0 Python/3.11.5"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 06:48:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "136"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"created_at\": \"2023-12-06 06:38:07\",\n    \"id\": 11,\n    \"name\": \"prediction3\",\n    \"status\": \"Completed\",\n    \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Download NN Prediction",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/prediction/download?nn_prediction_id=12",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"prediction",
+								"download"
+							],
+							"query": [
+								{
+									"key": "nn_prediction_id",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Download NN Prediction",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/prediction/download?nn_prediction_id=1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"prediction",
+										"download"
+									],
+									"query": [
+										{
+											"key": "nn_prediction_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "raw",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.0 Python/3.11.5"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 06:51:08 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 06:51:08 GMT"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment; filename=prediction3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/octet-stream"
+								},
+								{
+									"key": "Content-Length",
+									"value": "153"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 06 Dec 2023 06:38:13 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "ETag",
+									"value": "\"1701844693.5433662-153-3663539979\""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n1.0\r\n"
+						}
+					]
+				},
+				{
+					"name": "Get All NN Architectures",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/nn_architecture/list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"nn_architecture",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All NN Architectures",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/nn_architecture/list",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"nn_architecture",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.0 Python/3.11.5"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 05:58:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2452"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"configuration\": {\n            \"layers\": [\n                {\n                    \"activation\": null,\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 0,\n                    \"layer_type\": \"Input\",\n                    \"units\": 2\n                },\n                {\n                    \"activation\": \"relu\",\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 1,\n                    \"layer_type\": \"Dense\",\n                    \"units\": 5\n                },\n                {\n                    \"activation\": \"softmax\",\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 2,\n                    \"layer_type\": \"Dense\",\n                    \"units\": 2\n                }\n            ],\n            \"loss\": \"categorical_crossentropy\",\n            \"metrics\": [\n                \"accuracy\"\n            ],\n            \"optimizer\": \"Adam\"\n        },\n        \"created_at\": \"2023-10-19 03:39:58\",\n        \"id\": 1,\n        \"name\": \"arch1\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"configuration\": {\n            \"layers\": [\n                {\n                    \"activation\": null,\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 0,\n                    \"layer_type\": \"Input\",\n                    \"units\": 2\n                },\n                {\n                    \"activation\": \"relu\",\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 1,\n                    \"layer_type\": \"Dense\",\n                    \"units\": 5\n                },\n                {\n                    \"activation\": \"softmax\",\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 2,\n                    \"layer_type\": \"Dense\",\n                    \"units\": 2\n                }\n            ],\n            \"loss\": \"categorical_crossentropy\",\n            \"metrics\": [\n                \"accuracy\"\n            ],\n            \"optimizer\": \"Adam\"\n        },\n        \"created_at\": \"2023-10-19 03:40:39\",\n        \"id\": 2,\n        \"name\": \"arch2\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"configuration\": {\n            \"layers\": [\n                {\n                    \"activation\": null,\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 0,\n                    \"layer_type\": \"Input\",\n                    \"units\": 1\n                },\n                {\n                    \"activation\": \"relu\",\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 1,\n                    \"layer_type\": \"Dense\",\n                    \"units\": 5\n                },\n                {\n                    \"activation\": \"softmax\",\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 2,\n                    \"layer_type\": \"Dense\",\n                    \"units\": 2\n                }\n            ],\n            \"loss\": \"categorical_crossentropy\",\n            \"metrics\": [\n                \"accuracy\"\n            ],\n            \"optimizer\": \"Adam\"\n        },\n        \"created_at\": \"2023-11-05 14:29:27\",\n        \"id\": 3,\n        \"name\": \"arch3\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"configuration\": {\n            \"layers\": [\n                {\n                    \"activation\": null,\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 0,\n                    \"layer_type\": \"Input\",\n                    \"units\": 1\n                },\n                {\n                    \"activation\": \"relu\",\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 1,\n                    \"layer_type\": \"Dense\",\n                    \"units\": 5\n                },\n                {\n                    \"activation\": \"softmax\",\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 2,\n                    \"layer_type\": \"Dense\",\n                    \"units\": 1\n                }\n            ],\n            \"loss\": \"categorical_crossentropy\",\n            \"metrics\": [\n                \"accuracy\"\n            ],\n            \"optimizer\": \"Adam\"\n        },\n        \"created_at\": \"2023-11-06 00:50:13\",\n        \"id\": 4,\n        \"name\": \"arch4\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    },\n    {\n        \"configuration\": {\n            \"layers\": [\n                {\n                    \"activation\": null,\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 0,\n                    \"layer_type\": \"Input\",\n                    \"units\": 1\n                },\n                {\n                    \"activation\": \"relu\",\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 1,\n                    \"layer_type\": \"Dense\",\n                    \"units\": 2\n                },\n                {\n                    \"activation\": \"softmax\",\n                    \"architecture_type\": \"FNN\",\n                    \"layer_id\": 2,\n                    \"layer_type\": \"Dense\",\n                    \"units\": 1\n                }\n            ],\n            \"loss\": \"categorical_crossentropy\",\n            \"metrics\": [\n                \"accuracy\"\n            ],\n            \"optimizer\": \"Adam\"\n        },\n        \"created_at\": \"2023-12-06 05:57:22\",\n        \"id\": 5,\n        \"name\": \"arch6\",\n        \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get NN Architectures",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDYzOTc3Mzd9.enVbR73UJUw6uYpu3NxZOuw5n-sqCSzE4BPtYCVBWA8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/nn_architecture/detail?nn_architecture_id=3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"nn_architecture",
+								"detail"
+							],
+							"query": [
+								{
+									"key": "nn_architecture_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ0MTg1OTZ9.AHL3Z7IP8j3uAhmtPfBd8qtGAkNb-pRsjUBnVzj-3d8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/user/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ0MTg1OTZ9.AHL3Z7IP8j3uAhmtPfBd8qtGAkNb-pRsjUBnVzj-3d8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/user/profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQzMjA2ODV9.kRsogb9gM3z-fsIPqri6ZLJNAbVj2Nb7FxgN5upDfEI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"BNR\",\r\n    \"email\": \"test@mun.ca\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/user/update",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Dataset",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "dataset",
+									"type": "file",
+									"src": "/C:/Users/Bahador/Desktop/Semester 4/Capstone/Sample/Datasets/sample_dataset.csv"
+								},
+								{
+									"key": "name",
+									"value": "sample_dataset",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/dataset/upload",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"dataset",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Train Model",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nn_architecture_id\": 5,\r\n    \"dataset_id\": 4,\r\n    \"name\": \"sample_model_1000_epochs\",\r\n    \"input\": [\"a\", \"b\"],\r\n    \"output\": [\"y\"],\r\n    \"train_percent\": 0.8,\r\n    \"validation_percent\": 0.1,\r\n    \"test_percent\": 0.1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/model/train",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"model",
+								"train"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Train Model",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nn_architecture_id\": 5,\r\n    \"dataset_id\": 4,\r\n    \"name\": \"sample_model_1000_epochs\",\r\n    \"input\": [\"a\", \"b\"],\r\n    \"output\": [\"y\"],\r\n    \"train_percent\": 0.8,\r\n    \"validation_percent\": 0.1,\r\n    \"test_percent\": 0.1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/model/train",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"model",
+										"train"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.0 Python/3.11.5"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 07:28:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "283"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"created_at\": \"2023-12-10 07:03:15\",\n    \"dataset_id\": 4,\n    \"id\": 3,\n    \"input\": [\n        \"a\",\n        \"b\"\n    ],\n    \"name\": \"sample_model_1000_epochs\",\n    \"nn_architecture_id\": 5,\n    \"output\": [\n        \"y\"\n    ],\n    \"status\": \"Completed\",\n    \"test_percent\": 0.1,\n    \"train_percent\": 0.8,\n    \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\",\n    \"validation_percent\": 0.1\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Prediction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nn_model_id\": 3,\r\n    \"dataset_id\": 4,\r\n    \"name\": \"sample_prediction_training_dataset\",\r\n    \"columns\": [\"a\", \"b\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/prediction/create",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"prediction",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload NN Architecture",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"sample_arch\",\r\n    \"configuration\": {\r\n        \"layers\": [\r\n            {\r\n                \"layer_id\": 0,\r\n                \"layer_type\": \"Input\",\r\n                \"architecture_type\": \"FNN\",\r\n                \"units\": 2,\r\n                \"activation\": null\r\n            },\r\n            {\r\n                \"layer_id\": 1,\r\n                \"layer_type\": \"Dense\",\r\n                \"architecture_type\": \"FNN\",\r\n                \"units\": 10,\r\n                \"activation\": \"relu\"  // Change activation to 'relu'\r\n            },\r\n            {\r\n                \"layer_id\": 2,\r\n                \"layer_type\": \"Dense\",\r\n                \"architecture_type\": \"FNN\",\r\n                \"units\": 10,\r\n                \"activation\": \"relu\"  // Change activation to 'relu'\r\n            },\r\n            {\r\n                \"layer_id\": 3,\r\n                \"layer_type\": \"Output\",\r\n                \"architecture_type\": \"FNN\",\r\n                \"units\": 1,\r\n                \"activation\": \"sigmoid\"\r\n            }\r\n        ],\r\n        \"optimizer\": \"Adam\",\r\n        \"loss\": \"mean_squared_error\",  // Change loss to 'mean_squared_error'\r\n        \"metrics\": [\"mae\"]  // Change metrics to 'mae' (mean absolute error) for regression\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/nn_architecture/upload",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"nn_architecture",
+								"upload"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Upload NN Architecture",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDQ1MDg3ODJ9.m-0el0YL1WkPcnzXV81umNAadFea1dCQIP4Nt7BFVT8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"arch5\",\r\n    \"configuration\": {\r\n        \"layers\": [{\r\n                \"layer_id\": 0,\r\n                \"layer_type\": \"Input\",\r\n                \"architecture_type\": \"FNN\",\r\n                \"units\": 1,\r\n                \"activation\": null\r\n            },\r\n            {\r\n                \"layer_id\": 1,\r\n                \"layer_type\": \"Dense\",\r\n                \"architecture_type\": \"FNN\",\r\n                \"units\": 2,\r\n                \"activation\": \"relu\"\r\n            },\r\n            {\r\n                \"layer_id\": 2,\r\n                \"layer_type\": \"Dense\",\r\n                \"architecture_type\": \"FNN\",\r\n                \"units\": 2,\r\n                \"activation\": \"softmax\"\r\n            }\r\n        ],\r\n        \"optimizer\": \"Adam\",\r\n        \"loss\": \"categorical_crossentropy\",\r\n        \"metrics\": [\"accuracy\"]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/nn_architecture/upload",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"nn_architecture",
+										"upload"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.0 Python/3.11.5"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Dec 2023 20:58:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "490"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"configuration\": {\n        \"layers\": [\n            {\n                \"activation\": null,\n                \"architecture_type\": \"FNN\",\n                \"layer_id\": 0,\n                \"layer_type\": \"Input\",\n                \"units\": 1\n            },\n            {\n                \"activation\": \"relu\",\n                \"architecture_type\": \"FNN\",\n                \"layer_id\": 1,\n                \"layer_type\": \"Dense\",\n                \"units\": 2\n            },\n            {\n                \"activation\": \"softmax\",\n                \"architecture_type\": \"FNN\",\n                \"layer_id\": 2,\n                \"layer_type\": \"Dense\",\n                \"units\": 2\n            }\n        ],\n        \"loss\": \"categorical_crossentropy\",\n        \"metrics\": [\n            \"accuracy\"\n        ],\n        \"optimizer\": \"Adam\"\n    },\n    \"created_at\": \"2023-12-08 20:58:31\",\n    \"id\": 5,\n    \"name\": \"arch5\",\n    \"user_id\": \"c77da09f-a18c-4e11-af09-dee1c6762f3d\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit NN Architecture",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDYzOTc3Mzd9.enVbR73UJUw6uYpu3NxZOuw5n-sqCSzE4BPtYCVBWA8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"edited_arch2\",\r\n    \"configuration\": {\r\n        \"layers\": [{\r\n                \"layer_id\": 1,\r\n                \"layer_type\": \"Input\",\r\n                \"architecture_type\": \"FNN\",\r\n                \"units\": 0,\r\n                \"activation\": null\r\n            },\r\n            {\r\n                \"layer_id\": 1,\r\n                \"layer_type\": \"Dense\",\r\n                \"architecture_type\": \"FNN\",\r\n                \"units\": 5,\r\n                \"activation\": \"relu\"\r\n            },\r\n            {\r\n                \"layer_id\": 2,\r\n                \"layer_type\": \"Dense\",\r\n                \"architecture_type\": \"FNN\",\r\n                \"units\": 1,\r\n                \"activation\": \"softmax\"\r\n            }\r\n        ],\r\n        \"optimizer\": \"Adam\",\r\n        \"loss\": \"categorical_crossentropy\",\r\n        \"metrics\": [\"accuracy\"]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/nn_architecture/edit",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"nn_architecture",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete NN Architecture",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiJjNzdkYTA5Zi1hMThjLTRlMTEtYWYwOS1kZWUxYzY3NjJmM2QiLCJleHAiOjE3MDYzOTc3Mzd9.enVbR73UJUw6uYpu3NxZOuw5n-sqCSzE4BPtYCVBWA8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/nn_architecture/delete?nn_architecture_id=2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"nn_architecture",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "nn_architecture_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

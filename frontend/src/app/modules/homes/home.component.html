@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" style="display: flex; justify-content: space-between;">
+  <span>MunNNToolBox</span>
+  <button mat-raised-button (click)="logout()" >Logout</button>
+</mat-toolbar>
+
+<mat-tab-group [(selectedIndex)]="selectedTab">
+  <mat-tab label="Dataset">
+    <app-dataset></app-dataset>
+  </mat-tab>
+  <mat-tab label="Architecture">
+    <nn-architecture-list></nn-architecture-list>
+  </mat-tab>
+  <mat-tab label="Training">
+    <nn-training></nn-training>
+  </mat-tab>
+  <mat-tab label="Prediction">
+    <nn-prediction></nn-prediction>
+  </mat-tab>
+</mat-tab-group>
+<router-outlet></router-outlet>

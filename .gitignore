@@ -1,0 +1,13 @@
+.DS_Store
+
+# VSCode
+.vs/*
+
+# Flask
+backend/endpoints/.idea
+backend/endpoints/__pycache__
+backend/endpoints/venv
+
+# PyCharm
+__pycache__/
+.idea/

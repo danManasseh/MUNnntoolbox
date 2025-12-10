@@ -1,0 +1,2 @@
+- this directory should contain api services only - we can call it repositories as well.
+- make directory for each services, which includes the spec test and original class
